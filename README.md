@@ -11,4 +11,4 @@ Baja el código e desplegarlo sobre un servidor Glassfish mínimo 4 y el esquema
 Debes configurar el DataSource del JDBC que apunta al Pool de Conexiones en el Glassfish llamándolo: "jdbc/premium_almacen" para que se conecte a la base de datos y configurar el Realm tipo JDBCRealm llamado: "premiumAlmacenRealm"
 
 Los parámetros del Realm deben quedar como se ve a continuación:
-
+![VerifiqueseAlmacen Realm](http://oi67.tinypic.com/3445to7.jpg)
