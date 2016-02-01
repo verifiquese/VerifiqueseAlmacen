@@ -25,4 +25,6 @@ la base de datos y configurar el Realm tipo JDBCRealm llamado:
 Los parámetros del Realm deben quedar como se ve a continuación:
 ![VerifiqueseAlmacen Realm](http://oi67.tinypic.com/3445to7.jpg)
 
+#LICENCIA
 Tenga en cuenta los términos de la licencia sobre Proteccción de Datos Personales
+Ver Licencia https://github.com/verifiquese/VerifiqueseAlmacen/edit/master/LICENSE
