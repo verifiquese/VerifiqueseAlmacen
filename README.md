@@ -4,6 +4,7 @@ Verifíquese Almacén es una aplicación que le permite a cualquier usuario
 de los servicios Premium de la App Verifíquese Cédula, almacenar los datos 
 obtenidos del documento de Identidad escaneado con la Aplicación.  
 Para ver cómo funcionan los servicios Premium, ver este video en Youtube:
+
 https://www.youtube.com/watch?v=h098tUeYXYo
 
 La App se encuentra en: 
