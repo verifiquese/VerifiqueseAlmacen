@@ -1,9 +1,9 @@
 # Bienvenido al Wiki de VerifiqueseAlmacen!
 
-Esta aplicación le permite a cualquier usuario de los servicios Premium 
-de la App Verifíquese Cédula Almacenador los datos obtenidos del Documento 
-de Identidad escaneado con la Aplicación.  Para ver cómo funciona la 
-versión, ver este video en Youtube:  
+Verifíquese Almacén es una aplicación que le permite a cualquier usuario 
+de los servicios Premium de la App Verifíquese Cédula, almacenar los datos 
+obtenidos del documento de Identidad escaneado con la Aplicación.  
+Para ver cómo funcionan los servicios Premium, ver este video en Youtube:  
 https://www.youtube.com/watch?v=h098tUeYXYo
 
 El objetivo de este proyecto es que los usuarios puedan instalar en sus 
