@@ -92,13 +92,8 @@ public class DocumentVO {
         this.citizenID = citizenID;
     }
 
-    public Date getBirthDate() throws ParseException {
-        try {
-            return new SimpleDateFormat("yyyy-MM-dd").parse(this.birthDate);
-        } catch (NullPointerException e) {
-            System.out.println("Cumpleaños nulo");
-            return null;
-        }
+    public String getBirthDate(){
+        return birthDate;
     }
 
     public void setBirthDate(String birthDate) {

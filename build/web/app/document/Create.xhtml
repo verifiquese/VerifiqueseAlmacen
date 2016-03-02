@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDocumentTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_idDocument}" for="idDocument" />
+                    <h:inputText id="idDocument" value="#{documentController.selected.idDocument}" title="#{bundle.CreateDocumentTitle_idDocument}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_idDocument}"/>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_firstName}" for="firstName" />
+                    <h:inputText id="firstName" value="#{documentController.selected.firstName}" title="#{bundle.CreateDocumentTitle_firstName}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_firstName}"/>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_secondName}" for="secondName" />
+                    <h:inputText id="secondName" value="#{documentController.selected.secondName}" title="#{bundle.CreateDocumentTitle_secondName}" />
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_firstSurname}" for="firstSurname" />
+                    <h:inputText id="firstSurname" value="#{documentController.selected.firstSurname}" title="#{bundle.CreateDocumentTitle_firstSurname}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_firstSurname}"/>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_secondSurname}" for="secondSurname" />
+                    <h:inputText id="secondSurname" value="#{documentController.selected.secondSurname}" title="#{bundle.CreateDocumentTitle_secondSurname}" />
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_citizenId}" for="citizenId" />
+                    <h:inputText id="citizenId" value="#{documentController.selected.citizenId}" title="#{bundle.CreateDocumentTitle_citizenId}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_citizenId}"/>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_birthdate}" for="birthdate" />
+                    <h:inputText id="birthdate" value="#{documentController.selected.birthdate}" title="#{bundle.CreateDocumentTitle_birthdate}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_birthdate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_bloodType}" for="bloodType" />
+                    <h:inputText id="bloodType" value="#{documentController.selected.bloodType}" title="#{bundle.CreateDocumentTitle_bloodType}" />
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_bloodRh}" for="bloodRh" />
+                    <h:inputText id="bloodRh" value="#{documentController.selected.bloodRh}" title="#{bundle.CreateDocumentTitle_bloodRh}" />
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_creationDate}" for="creationDate" />
+                    <h:inputText id="creationDate" value="#{documentController.selected.creationDate}" title="#{bundle.CreateDocumentTitle_creationDate}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_creationDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_country}" for="country" />
+                    <h:inputText id="country" value="#{documentController.selected.country}" title="#{bundle.CreateDocumentTitle_country}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_country}"/>
+                    <h:outputLabel value="#{bundle.CreateDocumentLabel_documentType}" for="documentType" />
+                    <h:inputText id="documentType" value="#{documentController.selected.documentType}" title="#{bundle.CreateDocumentTitle_documentType}" required="true" requiredMessage="#{bundle.CreateDocumentRequiredMessage_documentType}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{documentController.create}" value="#{bundle.CreateDocumentSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{documentController.prepareList}" value="#{bundle.CreateDocumentShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateDocumentIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

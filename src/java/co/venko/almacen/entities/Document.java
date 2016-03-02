@@ -69,9 +69,9 @@ public class Document implements Serializable {
     @Size(max = 300)
     @Column(name = "citizen_id")
     private String citizenId;
+    @Size(max = 100)
     @Column(name = "birthdate")
-    @Temporal(TemporalType.DATE)
-    private Date birthdate;
+    private String birthdate;
     @Size(max = 45)
     @Column(name = "blood_type")
     private String bloodType;
@@ -155,11 +155,11 @@ public class Document implements Serializable {
         this.citizenId = citizenId;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 

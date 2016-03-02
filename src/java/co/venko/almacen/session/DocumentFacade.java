@@ -8,6 +8,7 @@ package co.venko.almacen.session;
 import co.venko.almacen.entities.Document;
 import co.venko.almacen.entities.Users;
 import co.venko.almacen.vo.DocumentVO;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -34,8 +35,7 @@ public class DocumentFacade extends AbstractFacade<Document> {
         super(Document.class);
     }
 
-    public void createDocument(DocumentVO documentVO) {
-        try {
+    public void createDocument(DocumentVO documentVO) throws Exception {
             Document document = new Document();
             document.setBirthdate(documentVO.getBirthDate());
             document.setBloodRh(documentVO.getBloodRH());
@@ -53,9 +53,6 @@ public class DocumentFacade extends AbstractFacade<Document> {
             document.setLatitud(documentVO.getLatidud());
             document.setLongitud(documentVO.getLongitud());
             create(document);
-        } catch (Exception e) {
-            System.out.println("Error al crear registro de documento " + documentVO.getCitizenID());
-        }
     }
 
     public int countFindByUser(String user) {

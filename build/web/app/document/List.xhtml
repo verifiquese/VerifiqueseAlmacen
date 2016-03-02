@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListDocumentTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <p:messages id="msg"/>
+                <h:outputText escape="false" value="#{bundle.ListDocumentEmpty}" rendered="#{documentController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{documentController.items.rowCount > 0}">
+                    <h:outputText value="#{documentController.pagination.pageFirstItem + 1} de #{documentController.pagination.pageLastItem + 1}/#{documentController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{documentController.previous}" value="#{bundle.Previous} #{documentController.pagination.pageSize}" rendered="#{documentController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{documentController.next}" value="#{bundle.Next} #{documentController.pagination.pageSize}" rendered="#{documentController.pagination.hasNextPage}"/>&nbsp;
+                    <br/><br/>
+                    <h:dataTable value="#{documentController.items}" var="item" border="0" cellpadding="3" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" >
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_idDocument}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idDocument}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_citizenId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.citizenId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_firstName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_secondName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.secondName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_firstSurname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstSurname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_secondSurname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.secondSurname}"/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_birthdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.birthdate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <!--                        <h:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="# {bundle.ListDocumentTitle_bloodType}"/>
+                                                    </f:facet>
+                                                    <h:outputText value="# {item.bloodType}"/>
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="# {bundle.ListDocumentTitle_bloodRh}"/>
+                                                    </f:facet>
+                                                    <h:outputText value="# {item.bloodRh}"/>
+                                                </h:column>-->
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_creationDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.creationDate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" timeZone="GMT-5" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_country}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.country}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_documentType}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.documentType}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDocumentTitle_readingDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.readingDate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputLink target="_blank" value="http://maps.google.com/maps?z=50&amp;t=h&amp;q=#{item.latitud},#{item.longitud}" title="Ver lugar de registro">
+                                <p:graphicImage value="/resources/img/view-map.png" width="30"/>
+                            </h:outputLink>
+
+
+                            <!--                            <p:commandButton update="gmap<p:dialog id="gmapDialog" widgetVar="dlg" width="625" height="400" modal="true">
+                                                            <p:gmap id="gmap" model="#//{documentController.emptyModel}"  
+                                                                    center="#//{item.latitud},#/7{item.longitud}" zoom="15" type="HYBRID" style="width:100%;height:400px" />
+                                                        </p:dialog>" action="#/7{documentController.addMarker(item)}" id="btn" value="Ver Ubicación" onclick="PF('dlg').show();"/>
+                                                        <p:dialog id="gmapDialog" widgetVar="dlg" width="625" height="400" modal="true">
+                                                            <p:gmap id="gmap" model="#//{documentController.emptyModel}"  
+                                                                    center="#//{item.latitud},#//{item.longitud}" zoom="15" type="HYBRID" style="width:100%;height:400px" />
+                                                        </p:dialog>-->
+                        </h:column>
+
+
+
+                        <!--                        <h:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="&nbsp;"/>
+                                                    </f:facet>
+                                                    <h:commandLink action="# {documentController.prepareView}" value="# {bundle.ListDocumentViewLink}"/>
+                                                    <h:outputText value=" "/>
+                                                    <h:commandLink action="# {documentController.prepareEdit}" value="# {bundle.ListDocumentEditLink}"/>
+                                                    <h:outputText value=" "/>
+                                                    <h:commandLink action="# {documentController.destroy}" value="# {bundle.ListDocumentDestroyLink}"/>
+                                                </h:column>-->
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+
+
+                <h:commandButton style="padding: 10px 20px 10px 20px" value="Actualizar" action="#{documentController.actualizar()}"/>
+                <!--<h:commandLink action="# {documentController.prepareCreate}" value="# {bundle.ListDocumentCreateLink}"/>-->
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
