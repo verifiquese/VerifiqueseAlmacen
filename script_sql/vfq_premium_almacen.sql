@@ -37,7 +37,7 @@ CREATE TABLE `document` (
   `first_surname` varchar(300) CHARACTER SET utf8 DEFAULT NULL,
   `second_surname` varchar(300) COLLATE utf8_bin DEFAULT NULL,
   `citizen_id` varchar(300) CHARACTER SET utf8 DEFAULT NULL,
-  `birthdate` date DEFAULT NULL,
+  `birthdate` varchar(100) DEFAULT NULL,
   `blood_type` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `blood_rh` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `creation_date` datetime DEFAULT NULL,
