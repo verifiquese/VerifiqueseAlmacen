@@ -107,3 +107,18 @@ tr.jsfcrud_even_row {
     color: #358e1a;
     font-size: 35px;
 }
+
+.caja-login{
+    width: 500px;
+    margin: 10% auto;
+    height: 200px;
+}
+
+.caja-login input[type='text'],input[type='password']{
+    padding: 10px;
+    width: 200px;
+}
+
+input[type='submit']{
+    padding: 6px;
+}

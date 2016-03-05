@@ -4,19 +4,25 @@ import co.venko.almacen.entities.Document;
 import co.venko.almacen.controller.util.JsfUtil;
 import co.venko.almacen.controller.util.PaginationHelper;
 import co.venko.almacen.session.DocumentFacade;
+import java.io.IOException;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 
 @ManagedBean(name = "documentController")
 @SessionScoped
@@ -30,6 +36,19 @@ public class DocumentController implements Serializable {
     private int selectedItemIndex;
 
     public DocumentController() {
+    }
+    
+    public void logout(){
+        ExternalContext context=FacesContext.getCurrentInstance().getExternalContext();
+        try {
+            ((HttpServletRequest) context.getRequest()).logout();
+            context.invalidateSession();
+            context.redirect("/VerifiquesePremiumAlmacen/home.jsp");
+        } catch (ServletException ex) {
+            Logger.getLogger(DocumentController.class.getName()).log(Level.SEVERE, null, ex.getMessage());
+        } catch (IOException ex) {
+            Logger.getLogger(DocumentController.class.getName()).log(Level.SEVERE, null, ex.getMessage());
+        }
     }
 
     public Document getSelected() {

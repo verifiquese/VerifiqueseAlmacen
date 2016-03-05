@@ -16,6 +16,9 @@
         <div id="container">
             <div id="header">
                 <img src="/VerifiquesePremiumAlmacen/resources/img/vfqcc_almacen.png"/>
+                <h:form>
+                    <h:commandLink style="float: right;padding: 10px" value="Salir" action="#{documentController.logout()}"/>
+                </h:form>
             </div>
             <div id="content">
                 <h2 class="text-title"><ui:insert name="title">Default Title</ui:insert></h2>

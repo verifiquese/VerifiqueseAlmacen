@@ -36,23 +36,23 @@ public class DocumentFacade extends AbstractFacade<Document> {
     }
 
     public void createDocument(DocumentVO documentVO) throws Exception {
-            Document document = new Document();
-            document.setBirthdate(documentVO.getBirthDate());
-            document.setBloodRh(documentVO.getBloodRH());
-            document.setBloodType(documentVO.getBloodType());
-            document.setCitizenId(documentVO.getCitizenID());
-            document.setCountry(documentVO.getCountry());
-            document.setCreationDate(new Date());
-            document.setDocumentType(documentVO.getDocumentType());
-            document.setFirstName(documentVO.getFirstName());
-            document.setFirstSurname(documentVO.getFirstSurname());
-            document.setSecondName(documentVO.getSecondName());
-            document.setSecondSurname(documentVO.getSecondSurname());
-            document.setUserName(new Users(documentVO.getUser()));
-            document.setReadingDate(documentVO.getReadingDate());
-            document.setLatitud(documentVO.getLatidud());
-            document.setLongitud(documentVO.getLongitud());
-            create(document);
+        Document document = new Document();
+        document.setBirthdate(documentVO.getBirthDate());
+        document.setBloodRh(documentVO.getBloodRH());
+        document.setBloodType(documentVO.getBloodType());
+        document.setCitizenId(documentVO.getCitizenID());
+        document.setCountry(documentVO.getCountry());
+        document.setCreationDate(new Date());
+        document.setDocumentType(documentVO.getDocumentType());
+        document.setFirstName(documentVO.getFirstName());
+        document.setFirstSurname(documentVO.getFirstSurname());
+        document.setSecondName(documentVO.getSecondName());
+        document.setSecondSurname(documentVO.getSecondSurname());
+        document.setUserName(new Users(documentVO.getUser()));
+        document.setReadingDate(documentVO.getReadingDate());
+        document.setLatitud(documentVO.getLatidud());
+        document.setLongitud(documentVO.getLongitud());
+        create(document);
     }
 
     public int countFindByUser(String user) {
@@ -67,6 +67,11 @@ public class DocumentFacade extends AbstractFacade<Document> {
         q.setMaxResults(i[1] - i[0] + 1);
         q.setFirstResult(i[0]);
         return q.getResultList();
+    }
+
+    public int removerDocumentos(String usuario, int minutos) {
+        Query sql = getEntityManager().createNativeQuery("delete from document where user_name='" + usuario + "' and TIMESTAMPDIFF(MINUTE , creation_date, now()) >=" + minutos + "");
+        return sql.executeUpdate();
     }
 
 }
