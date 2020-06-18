@@ -27,9 +27,9 @@ a un oool de conexiones en el Glassfish, ara que se conecte a
 la base de datos y configurar el Realm tipo JDBCRealm llamado: 
 "premiumAlmacenRealm"
 
-Los parámetros del Realm deben quedar como se ve a continuación:
-![VerifiqueseAlmacen Realm](http://oi67.tinypic.com/3445to7.jpg)
-
 #LICENCIA
-Ten en cuenta los términos de la licencia sobre Proteccción de Datos Personales.
 Ver Licencia https://github.com/verifiquese/VerifiqueseAlmacen/blob/master/LICENSE
+
+#PROTECCIÓN DE DATOS PERSONALES
+Por favor tener en cuenta estos términos de Protección de Datos Personales:
+https://github.com/verifiquese/VerifiqueseAlmacen/blob/master/ProteccionDatosPersonales.md
