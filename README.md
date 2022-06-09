@@ -20,7 +20,7 @@ aplicación para **almacenar** los datos de la Aplicación y poder tener el cont
 Estos son los **códigos** para configurar la Aplicación de **Verifíquese Cédula** con **Verifíquese Almacén** [**Ver**](https://github.com/verifiquese/VerifiqueseAlmacen/blob/master/codigos.md)
 
 ### ***Obtener el Aplicativo Verifíquese Cédula***
-[![Play Store](https://github.com/verifiquese/VerifiqueseAlmacen/blob/master/assets/play_store.png)](https://play.google.com/store/apps/details?id=se.verifique.app.cedula)
+[![Play Store](https://www.verifique.se/sites/default/files/images/badge-google_0.png)](https://play.google.com/store/apps/details?id=se.verifique.app.cedula)
 [![App Gallery](https://www.verifique.se/sites/default/files/images/badge-huawei-appgallery_v2.png)](https://appgallery.huawei.com/#/app/C101280213)
 [![App Store](https://www.verifique.se/sites/default/files/images/badge-appstore_0.png)](https://apps.apple.com/co/app/id964472455)
 
