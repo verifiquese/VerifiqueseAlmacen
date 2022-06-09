@@ -3,7 +3,7 @@
 ## ***¿Qué es Verifíquese Almacén?***
 **Verifíquese Almacén** es una aplicación que le permite a **cualquier usuario** de los **Servicios Prémium** de la Aplicación **Verifíquese Cédula**, almacenar los datos obtenidos del documento de identidad escaneado con la Aplicación.
 
-> **Nota:** Para ver cómo funcionan los servicios Prémium, ver el video [***Aquí***](https://www.youtube.com/c/VerifiqueseCedula/videos)
+> **Nota:** Para ver cómo funcionan los servicios Prémium, ver el canal de YouTube [***Aquí***](https://www.youtube.com/c/VerifiqueseCedula/videos)
 
 ### ***Objetivo del proyecto***
 El objetivo de este proyecto es que los usuarios puedan **instalar** en sus **equipos o servidores** su propia
